@@ -1,0 +1,30 @@
+/* 样式的引入，后面的分号不能少,不然会报错 */
+@import "./styles/iconfont.wxss";
+
+/* 在微信小程序中 不支持通配符 */
+page, view, text, swiper, swiper-item, image, navigator{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  主题颜色,通过变量来实现
+  1、less文件中国,存在 变量这个知识
+  2、原生的css和wxss也是支持变量的
+  3、在全局的app.wxss文件中配置了主题颜色，则所有的页面都能拿得到
+ */
+page {
+  /* 定义主题颜色 */
+  --themeColor: #eb4450;
+  /* 
+    定义统一字体大小,假设设计稿大小是375px
+    1px = 2rx
+    14px = 28 rpx
+   */
+  font-size: 28rpx;
+}
+
+image {
+  width: 100%;
+}

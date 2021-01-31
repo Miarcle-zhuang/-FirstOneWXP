@@ -1,0 +1,61 @@
+page {
+  /* 小程序页面的视口高度不包括navigationBar和tabBar*/
+  height: 100%;
+}
+.cates {
+  height: 100%;
+  .container {
+    display: flex;
+    /* less中使用calc的时候也可以这样写 */
+    /* height: ~'calc(100vh - 90rpx)'; */
+    height: calc(100vh - 90rpx);
+    .left_menu {
+      height: 100%;
+      flex: 2;
+      .menu_item {
+        height: 80rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30rpx;
+      }
+      .active {
+        color: var(--themeColor);
+        /* currentColor表示“当前的标签所继承的文字颜色” */
+        border-left: 5rpx solid currentColor;
+      }
+    }
+    .right_content {
+      height: 100%;
+      flex: 5;
+      .goods_group {
+        .goods_title {
+          height: 80rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .delimiter {
+            padding: 0 10rpx;
+            color: #ccc;
+          }
+          .title {}
+        }
+        .goods_list {
+          display: flex;
+          flex-wrap: wrap;
+
+          navigator {
+            width: 33.33%;
+            text-align: center;
+
+            image {
+              width: 50%;
+            }
+            .goods_names {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+page {
+  /* 小程序页面的视口高度不包括navigationBar和tabBar*/
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .container {
+  display: flex;
+  /* less中使用calc的时候也可以这样写 */
+  /* height: ~'calc(100vh - 90rpx)'; */
+  height: calc(100vh - 90rpx);
+}
+.cates .container .left_menu {
+  height: 100%;
+  flex: 2;
+}
+.cates .container .left_menu .menu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cates .container .left_menu .active {
+  color: var(--themeColor);
+  /* currentColor表示“当前的标签所继承的文字颜色” */
+  border-left: 5rpx solid currentColor;
+}
+.cates .container .right_content {
+  height: 100%;
+  flex: 5;
+}
+.cates .container .right_content .goods_group .goods_title {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cates .container .right_content .goods_group .goods_title .delimiter {
+  padding: 0 10rpx;
+  color: #ccc;
+}
+.cates .container .right_content .goods_group .goods_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .container .right_content .goods_group .goods_list navigator {
+  width: 33.33%;
+  text-align: center;
+}
+.cates .container .right_content .goods_group .goods_list navigator image {
+  width: 50%;
+}

@@ -1,0 +1,69 @@
+/* 轮播图的样式 */
+.index_swiper {
+  swiper {
+    width: 750rpx;
+    height: 340rpx;
+    image {
+      width: 100%;
+    }
+  }
+}
+
+/* 导航的样式 */
+.index_cate {
+  display: flex;
+  navigator {
+    flex: 1;
+    padding: 20rpx;
+    image {
+      width: 100%;
+    }
+  }
+}
+
+/* 楼层的样式 */
+.index_floor {
+  .floor_group {
+    .floor_title {
+      padding: 10px 0;
+      image {
+        width: 100%;
+      }
+    }
+    .floor_list {
+      /* 
+        "overflow:hidden"还有另外一个特殊的用途，
+        那就是清除包含块内子元素的浮动
+       */
+      overflow: hidden;
+      navigator {
+        float: left;
+        width: 33.33%;
+        /* 
+          nth-last-child(-n+4)代表了父元素(父元素是
+          类名为floor_list的view标签)中,倒数的四个
+          子元素(子元素是navigator),而&直接代表了
+          子元素navigator,这里的作用是选择了后四个navigator
+         */
+        /* 后四个超链接 */
+        &:nth-last-child(-n+4) {
+          //源图的宽高, 232 * 386
+          //232 / 386 = 33.3vw / height
+          //第一张图的高度是height: 33.3vw * 386 /232
+          height: 33.3vw*386/232/2;
+          border-left: 5px solid #fff;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          border-bottom: 5px solid #fff;
+        }
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
